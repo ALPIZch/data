@@ -9,9 +9,7 @@ commit_message="Updated static data"
 # Ausführen der Befehle
 in2csv data.xls > export.csv
 csvtojson ./export.csv | jq > data.json
-cp data.json /public/data.json
 
-cd public
 
 git init
 
@@ -22,7 +20,6 @@ git add .
 git commit -m "$commit_message"
 
 # Verknüpfe das lokale Repository mit dem GitHub-Repository
-git remote add origin "$repository"
 
 # Pushe den Commit auf das GitHub-Repository
 git push --set-upstream origin main
